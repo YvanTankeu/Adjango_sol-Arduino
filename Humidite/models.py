@@ -1,7 +1,8 @@
 from django.db import models
 
-# Create your models here.from django.db import models
-
 class Plante(models.Model):
-    humidite_val = models.fields.FloatField(max_length = 5)
-    unixtime_val = models.fields.IntegerField(blank=True, null=True)
+    id = models.AutoField(primary_key=True)
+    ts = models.IntegerField(null=True)
+    temperature_val = models.DecimalField(null=True, max_digits=5, decimal_places=2)
+    humidite_val = models.DecimalField(null=True, max_digits=5, decimal_places=2)
+    

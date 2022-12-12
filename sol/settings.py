@@ -25,7 +25,8 @@ SECRET_KEY = 'django-insecure-j)5uva9$@32a-8(adl_73a8snm$w(zeyj)!l$z@k=ve!%vlox$
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS=['*']
+CORS_ORIGIN_ALLOW_ALL = True
 
 
 # Application definition
@@ -38,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Humidite',
-    
+    'rest_framework',  
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -49,6 +51,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'sol.urls'
@@ -77,10 +80,10 @@ WSGI_APPLICATION = 'sol.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'Humidite', 
+        'NAME': 'Humid', 
         'USER': 'postgres', 
-        'PASSWORD': 'a',
-        'HOST': '192.168.2.32', 
+        'PASSWORD': 'admin',
+        'HOST': '192.168.2.30', 
         'PORT': '5432',
     }
 }
