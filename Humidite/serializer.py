@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from Humidite.models import Plante
+from Humidite.models import Plante,Touch
 
 
 # Les sérialiseurs définissent la représentation de l'API.
@@ -8,6 +8,11 @@ from Humidite.models import Plante
 class HumideSerializer(serializers.ModelSerializer) :
     class Meta:
         model = Plante # ca prend le model a mapper
+        fields = '__all__' # tous les donnes du models comvernees
+        
+class TouchSerializer(serializers.ModelSerializer) :
+    class Meta:
+        model = Touch # ca prend le model a mapper
         fields = '__all__' # tous les donnes du models comvernees
 
 # Par la suite il faut creer les vues qui vont recevoir les differents call API et 
